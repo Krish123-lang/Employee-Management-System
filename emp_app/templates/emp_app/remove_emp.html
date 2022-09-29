@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% block title %} Remove Employee{% endblock title %}
+{% comment %} For Removing an Employee  {% endcomment %}
+
+
+{% block content %}
+<div class="container">
+    <h1>Remove An Employee</h1>
+
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="true">
+          Choose Employee To Be Removed
+        </button>
+        <ul class="dropdown-menu">
+
+          {% comment %} using for loop {% endcomment %}
+          {% for emp in emps %}
+          <li><a href="/remove_emp/{{emp.id}}" class="dropdown-item" type="button">{{emp.first_name}} {{emp.last_name}} ( {{emp.dept}} > {{emp.role}}
+            > {{emp.location}} ) {{emp.phone}}</a></li>
+          {% endfor %}
+          {% comment %} for loop ends  {% endcomment %}
+        </ul>
+      </div>
+</div>
+
+{% endblock content %}

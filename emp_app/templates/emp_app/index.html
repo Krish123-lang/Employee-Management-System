@@ -1,0 +1,38 @@
+{% extends 'base.html' %} {% block title %} View All Employee 
+{% comment %} Viewing All Employee Data  {% endcomment %}
+{% endblock title %}
+
+ {% block content %}
+ <div class="container">
+<h1> View All Employee</h1>
+
+<table class="table table-striped">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Department</th>
+        <th>Salary</th>
+        <th>Bonus</th>
+        <th>Role</th>
+        <th>Phone</th>
+        <th>Location</th>
+        <th>Hired Date</th>
+    </tr>
+    {% for emp in emps %}
+    <tr>
+        <td>{{emp.id}}</td>
+        <td>{{emp.first_name}} {{emp.last_name}}</td>
+        <td>{{emp.dept.name}}</td>
+        <td>NRS.{{emp.salary}}</td>
+        <td>NRS.{{emp.bonus}}</td>
+        <td>{{emp.role.name}}</td>
+        <td>{{emp.phone}}</td>
+        <td>{{emp.dept.location}}</td>
+        <td>{{emp.hire_date}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</div>
+
+{% endblock content %}
+

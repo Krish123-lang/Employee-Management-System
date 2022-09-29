@@ -1,0 +1,48 @@
+{% extends 'base.html' %} {% block title %} Add An Employee
+{% comment %} Form To Add Employee {% endcomment %}
+{% comment %} defining base templates  {% endcomment %}
+{% endblock title %}
+{% comment %} defining base templates  {% endcomment %}
+{% block content %}
+
+<div class="container">
+<h1> Add An Employee</h1>
+<form class="row g-3" method="post" action="{% url 'add_emp' %}">
+    {% comment %} {% csrf_token %} for security against Cross Site Request Forgery Attack {% endcomment %}
+    {% csrf_token %}
+    <div class="mb-3">
+        <div class="row">
+            <div class="col">
+                <input type="text" class="form-control" name="first_name" placeholder="First name" aria-label="First name">
+            </div>
+            <div class="col">
+                <input type="text" class="form-control" name="last_name" placeholder="Last name" aria-label="Last name"><br>
+            </div>
+        </div>
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="dept" name="dept" placeholder="Department"><br>
+            </div>
+
+            <div class="col-md-6">
+                <input type="number" class="form-control" id="salary" name="salary" placeholder="Salary"><br>
+            </div>
+            <div class="col-6">
+                <input type="number" class="form-control" id="bonus" name="bonus" placeholder="Bonus"><br>
+            </div>
+            <div class="col-6">
+                <input type="text" class="form-control" id="role" name="role" placeholder="Enter Role"><br>
+            </div>
+            <div class="col-md-6">
+                <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter Phone number"><br>
+            </div>
+            <div class="col-md-2">
+                <input type="text" class="form-control" id="location" name="location" placeholder="Enter Location">
+            </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+    {% comment %} submitting the form  {% endcomment %}
+
+</form>
+</div>
+{% endblock content %}

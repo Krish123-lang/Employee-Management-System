@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block title %} Filter Employee 
+{% comment %} Filtering Employee Data  {% endcomment %}
+{% endblock title %}
+ {% block content %}
+<div class="container">
+    <h1>Filter Employee Details</h1>
+
+    <form class="row g-3" method="post" action="{% url 'filter_emp' %}">
+    {% csrf_token %}
+
+    <div class="mb-3">
+        
+            <div class="col-md-6">
+                <input type="text" class="form-control" name="name" placeholder="First name/Last name" aria-label="First name">
+            </div><br>
+       
+            <div class="col-md-6">
+                <input type="text" class="form-control" id="dept" name="dept" placeholder="Department"><br>
+            </div>
+
+            <div class="col-6">
+                <input type="text" class="form-control" id="role" name="role" placeholder="Enter Role"><br>
+            </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+</div>
+{% endblock content %}
