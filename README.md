@@ -33,7 +33,7 @@ ii) env\scripts\activate
  python manage.py runserver
  ```
 
-5. Copy the url and open it into your browser.
+5. Copy the url(127.0.0.1:8000) and open it into your browser.
 6. You must see this screen
 
 ![View All Employee](https://github.com/Krish123-lang/Employee-Management-System/blob/main/screenshots/view_all_employee.png)
